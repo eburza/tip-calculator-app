@@ -12,8 +12,8 @@ export default function App() {
                 <img id='logo' src='./images/logo.svg' alt='splitter logo' />
             </header>
 
-            <section id="calculator-app">
-                <form class="container">
+            <section id='calculator-app'>
+                <form class='container'>
                     <FormInputComponent 
                         name='bill'
                         label='Bill'/>
@@ -23,8 +23,8 @@ export default function App() {
                         label='Number of People'/>
                 </form>
 
-                <div id="output-section" class="container">
-                    <div id="computation-container" class="container">
+                <div id='output-section' class='container'>
+                    <div id='computation-container' class='container'>
                         <OutputCalculation 
                             label='Tip Amount'
                             result='00'/>

@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { getPercentage } from '../api'
 
 export default function PrecentageButtons() {
 
-    const [percentage, setPercentage] = React.useState([])
-    const [loading, setLoading] = React.useState(false)
-    const [error, setError] = React.useState(null)
+    const [percentage, setPercentage] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
     
-    React.useEffect(() => {
+    useEffect(() => {
         async function loadPercentage() {
             setLoading(true)
             try {
@@ -27,7 +27,7 @@ export default function PrecentageButtons() {
     const percentageAmount = percentage.map(percent => (
         <li key={percent.id}>
           <label for={percent.amount}>
-            <input type="radio" id={percent.amount} name="percent"/>
+            <input type='radio' id={percent.amount} name='percent'/>
             {percent.name}
           </label>
         </li>
@@ -43,10 +43,10 @@ export default function PrecentageButtons() {
 
     return (
     <div className='container'>
-        <label class="form-label">Select Tip %</label>
-        <ul id="tip-percent">
+        <label class='form-label'>Select Tip %</label>
+        <ul id='tip-percent'>
             {percentageAmount}
-            <input type="text" id="percent-custom" name="percent-custom" placeholder="Custom" />
+            <input type='text' id='percent-custom' name='percent-custom' placeholder='Custom' />
         </ul>
     </div>
     )
