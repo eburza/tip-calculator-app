@@ -2,6 +2,7 @@ import React from 'react'
 import PrecentageButtons from './components/PrecentageButtons'
 import FormInputComponent from './components/FormInputComponent'
 import ResetButton from './components/ResetButton'
+import OutputCalculation from './components/OutputCalculation'
 
 export default function App() {
 
@@ -12,7 +13,7 @@ export default function App() {
             </header>
 
             <section id="calculator-app">
-                <form>
+                <form class="container">
                     <FormInputComponent 
                         name='bill'
                         label='Bill'/>
@@ -22,7 +23,15 @@ export default function App() {
                         label='Number of People'/>
                 </form>
 
-                <div>
+                <div id="output-section" class="container">
+                    <div id="computation-container" class="container">
+                        <OutputCalculation 
+                            label='Tip Amount'
+                            result='00'/>
+                        <OutputCalculation 
+                            label='Total'
+                            result='00'/>
+                    </div>
                     <ResetButton />
                 </div>
 
