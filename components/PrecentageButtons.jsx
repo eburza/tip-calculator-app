@@ -43,7 +43,7 @@ export default function PrecentageButtons() {
 
     return (
     <div className='container'>
-        <label class='form-label'>Select Tip %</label>
+        <label className='form-label'>Select Tip %</label>
         <ul id='tip-percent'>
             {percentageAmount}
             <input type='text' id='percent-custom' name='percent-custom' placeholder='Custom' />
