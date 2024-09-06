@@ -9,14 +9,18 @@ export default function App() {
             <header>
                 <img id='logo' src='./images/logo.svg' alt='splitter logo' />
             </header>
-            <FormInputComponent 
-                name='bill'
-                label='Bill'/>
-            <PrecentageButtons />
-            <FormInputComponent 
-                name='people'
-                label='Number of People'/>
-            <h1>App tip</h1>
+            <section id="calculator-app">
+                <form>
+                    <FormInputComponent 
+                        name='bill'
+                        label='Bill'/>
+                    <PrecentageButtons />
+                    <FormInputComponent 
+                        name='people'
+                        label='Number of People'/>
+                </form>
+            </section>
+
         </div>
     )
 }
