@@ -1,6 +1,7 @@
 import React from 'react'
 import PrecentageButtons from './components/PrecentageButtons'
 import FormInputComponent from './components/FormInputComponent'
+import ResetButton from './components/ResetButton'
 
 export default function App() {
 
@@ -9,6 +10,7 @@ export default function App() {
             <header>
                 <img id='logo' src='./images/logo.svg' alt='splitter logo' />
             </header>
+
             <section id="calculator-app">
                 <form>
                     <FormInputComponent 
@@ -19,6 +21,11 @@ export default function App() {
                         name='people'
                         label='Number of People'/>
                 </form>
+
+                <div>
+                    <ResetButton />
+                </div>
+
             </section>
 
         </div>
