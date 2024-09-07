@@ -6,8 +6,8 @@ import OutputCalculation from './components/OutputCalculation'
 
 export default function App() {
 
-    const [ inputBill, setInputBill ] = useState(0)
-    const [ inputPeople, setInputPeople ] = useState(0)
+    const [ inputBill, setInputBill ] = useState('')
+    const [ inputPeople, setInputPeople ] = useState('')
 
     function handleInputChangeBill(newInput) {
         setInputBill(newInput)

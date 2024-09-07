@@ -7,7 +7,6 @@ export default function FormInputComponent({name, label, inputData, onInputChang
 
         const newData = event.target.value
 
-        console.log(newData)
         onInputChange(newData)
     }
 
@@ -22,9 +21,11 @@ export default function FormInputComponent({name, label, inputData, onInputChang
         id={name} 
         className='form-input' 
         name={name} 
-        type='text' 
-        placeholder={inputData}
-        onInput={handleChange}/>
+        type='number' 
+        value={inputData}
+        placeholder='0'
+        onInput={handleChange}
+        required/>
     </div>
 )
 }
