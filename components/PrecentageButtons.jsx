@@ -26,7 +26,7 @@ export default function PrecentageButtons() {
     
     const percentageAmount = percentage.map(percent => (
         <li key={percent.id}>
-          <label for={percent.amount}>
+          <label htmlFor={percent.amount}>
             <input type='radio' id={percent.amount} name='percent'/>
             {percent.name}
           </label>
