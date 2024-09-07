@@ -8,6 +8,7 @@ export default function App() {
 
     const [ inputBill, setInputBill ] = useState('')
     const [ inputPeople, setInputPeople ] = useState('')
+    const [ customInput, setCustomInput ] = useState('')
 
     function handleInputChangeBill(newInput) {
         setInputBill(newInput)
@@ -15,6 +16,10 @@ export default function App() {
 
     function handleInputChangePeople(newInput) {
         setInputPeople(newInput)
+    }
+
+    function handleInputChangeCustom(newInput) {
+        setCustomInput(newInput)
     }
 
     return (
@@ -30,7 +35,9 @@ export default function App() {
                         label='Bill'
                         inputData={inputBill}
                         onInputChange={handleInputChangeBill}/>
-                    <PrecentageButtons />
+                    <PrecentageButtons 
+                        inputData={customInput}
+                        onInputChange={handleInputChangeCustom}/>
                     <FormInputComponent 
                         name='people'
                         label='Number of People'

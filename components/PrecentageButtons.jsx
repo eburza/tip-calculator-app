@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getPercentage } from '../api'
 
-export default function PrecentageButtons() {
+export default function PrecentageButtons( {inputData, onInputChange} ) {
 
     const [percentage, setPercentage] = useState([])
     const [loading, setLoading] = useState(false)
@@ -23,6 +23,14 @@ export default function PrecentageButtons() {
     
         loadPercentage()
     }, [])
+
+    function handleChange(event) {
+        event.preventDefault()
+
+        const newData = event.target.value
+
+        onInputChange(newData)
+    }
     
     const percentageAmount = percentage.map(percent => (
         <li key={percent.id}>
@@ -46,7 +54,7 @@ export default function PrecentageButtons() {
         <label className='form-label'>Select Tip %</label>
         <ul id='tip-percent'>
             {percentageAmount}
-            <input type='number' id='percent-custom' name='percent-custom' placeholder='Custom' />
+            <input type='number' id='percent-custom' name='percent-custom' placeholder='Custom' value={inputData} onInput={handleChange}/>
         </ul>
     </div>
     )
