@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PrecentageButtons from './components/PrecentageButtons'
+import PercentageButtons from './components/PercentageButtons'
 import FormInputComponent from './components/FormInputComponent'
 import ResetButton from './components/ResetButton'
 import OutputCalculation from './components/OutputCalculation'
@@ -35,7 +35,7 @@ export default function App() {
                         label='Bill'
                         inputData={inputBill}
                         onInputChange={handleInputChangeBill}/>
-                    <PrecentageButtons 
+                    <PercentageButtons 
                         inputData={customInput}
                         onInputChange={handleInputChangeCustom}/>
                     <FormInputComponent 
