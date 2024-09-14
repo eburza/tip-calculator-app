@@ -10,6 +10,7 @@ export default function App() {
     const [ inputPeople, setInputPeople ] = useState('')
     const [ percentageSelected, setPercentageSelected ] = useState('')
     const [ percentageCustom, setPercentageCustom ] = useState('')
+    
 
     function handleInputChangeBill(newInput) {
         setInputBill(newInput)

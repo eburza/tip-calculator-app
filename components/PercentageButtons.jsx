@@ -16,6 +16,7 @@ export default function PercentageButtons( {percentageSelected, onPercentageSele
                 type='radio' 
                 id={percent.amount} 
                 name='percent'
+                value={percent.amount}
                 checked={ percentageSelected === percent.amount}
                 onChange={() => onPercentageSelectedChange(percent.amount)}/>
             {percent.name}
