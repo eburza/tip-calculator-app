@@ -8,7 +8,8 @@ export default function App() {
 
     const [ inputBill, setInputBill ] = useState('')
     const [ inputPeople, setInputPeople ] = useState('')
-    const [ customInput, setCustomInput ] = useState('')
+    const [ percentageSelected, setPercentageSelected ] = useState('')
+    const [ percentageCustom, setPercentageCustom ] = useState('')
 
     function handleInputChangeBill(newInput) {
         setInputBill(newInput)
@@ -18,8 +19,14 @@ export default function App() {
         setInputPeople(newInput)
     }
 
-    function handleInputChangeCustom(newInput) {
-        setCustomInput(newInput)
+    function handleInputChangeTipSelected(newInput) {
+        setPercentageSelected(newInput)
+        setPercentageCustom('')
+    }
+
+    function handleInputChangeTipCustom(newInput) {
+        setPercentageCustom(newInput)
+        setPercentageSelected('')
     }
 
     return (
@@ -36,8 +43,10 @@ export default function App() {
                         inputData={inputBill}
                         onInputChange={handleInputChangeBill}/>
                     <PercentageButtons 
-                        inputData={customInput}
-                        onInputChange={handleInputChangeCustom}/>
+                        percentageSelected={percentageSelected}
+                        onPercentageSelectedChange={handleInputChangeTipSelected}
+                        percentageCustom={percentageCustom}
+                        onPercentageCustomChange={handleInputChangeTipCustom}/>
                     <FormInputComponent 
                         name='people'
                         label='Number of People'

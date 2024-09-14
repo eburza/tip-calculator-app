@@ -1,20 +1,23 @@
 import React from 'react'
 import { percentageData } from '../data/percentageData'
 
-export default function PercentageButtons( {inputData, onInputChange} ) {
+export default function PercentageButtons( {percentageSelected, onPercentageSelectedChange, percentageCustom, onPercentageCustomChange} ) {
 
-    function handleChange(event) {
+    function handlePercentageCustomChange(event) {
         event.preventDefault()
-
         const newData = event.target.value
-
-        onInputChange(newData)
+        onPercentageCustomChange(newData)
     }
     
     const percentageAmount = percentageData.map(percent => (
         <li key={percent.id}>
           <label htmlFor={percent.amount}>
-            <input type='radio' id={percent.amount} name='percent'/>
+            <input 
+                type='radio' 
+                id={percent.amount} 
+                name='percent'
+                checked={ percentageSelected === percent.amount}
+                onChange={() => onPercentageSelectedChange(percent.amount)}/>
             {percent.name}
           </label>
         </li>
@@ -25,7 +28,13 @@ export default function PercentageButtons( {inputData, onInputChange} ) {
         <label className='form-label'>Select Tip %</label>
         <ul id='tip-percent'>
             {percentageAmount}
-            <input type='number' id='percent-custom' name='percent-custom' placeholder='Custom' value={inputData} onInput={handleChange}/>
+            <input 
+                type='number' 
+                id='percent-custom' 
+                name='percent-custom' 
+                placeholder='Custom' 
+                value={percentageCustom} 
+                onChange={handlePercentageCustomChange}/>
         </ul>
     </div>
     )
