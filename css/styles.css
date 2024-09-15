@@ -1,4 +1,3 @@
-/* functions */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -57,12 +56,12 @@ button,
 }
 
 /* form section */
-#form {
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 #bill {
