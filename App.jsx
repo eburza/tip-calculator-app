@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PercentageButtons from './components/PercentageButtons'
 import FormInputComponent from './components/FormInputComponent'
 import ResetButton from './components/ResetButton'
@@ -10,6 +10,24 @@ export default function App() {
     const [ inputPeople, setInputPeople ] = useState('')
     const [ percentageSelected, setPercentageSelected ] = useState('')
     const [ percentageCustom, setPercentageCustom ] = useState('')
+    const [ tipPerPerson, setTipPerPerson ] = useState(0)
+    const [ totalPerPerson, setTotalPerPerson ] = useState(0)
+
+    useEffect( () => {
+        calculateTip()
+    }, [ inputBill, inputPeople, percentageSelected, percentageCustom ])
+
+    function calculateTip() {
+        const bill = parseFloat(inputBill)
+        const people = parseInt(inputPeople)
+        const percentage = percentageSelected ? parseFloat(percentageSelected) : parseFloat(percentageCustom)
+
+        const tipTotal = (bill * percentage) / 100
+        const totalBill = bill + tipTotal
+
+        setTipPerPerson(tipTotal / people)
+        setTotalPerPerson(totalBill / people)
+    }
 
 
     function handleInputChangeBill(newInput) {
@@ -59,10 +77,10 @@ export default function App() {
                     <div id='computation-container' className='container'>
                         <OutputCalculation 
                             label='Tip Amount'
-                            result='00'/>
+                            result={tipPerPerson}/>
                         <OutputCalculation 
                             label='Total'
-                            result='00'/>
+                            result={totalPerPerson}/>
                     </div>
                     <ResetButton />
                 </div>
