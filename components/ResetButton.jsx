@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function ResetButton() {
+export default function ResetButton({ onReset }) {
     return (
-        <input id='reset-button' type='reset' value='Reset'></input>
+        <button id='reset-button' type='button' onClick={onReset}>Reset</button>
     )
 }

@@ -48,6 +48,15 @@ export default function App() {
         setPercentageSelected('')
     }
 
+    function handleReset() {
+        setInputBill('')
+        setInputPeople('')
+        setPercentageSelected('')
+        setPercentageCustom('')
+        setTipPerPerson(0)
+        setTotalPerPerson(0)
+    }
+
     return (
         <div id='page-wrapper'>
             <header>
@@ -82,7 +91,8 @@ export default function App() {
                             label='Total'
                             result={totalPerPerson}/>
                     </div>
-                    <ResetButton />
+                    <ResetButton 
+                        onReset={handleReset}/>
                 </div>
 
             </section>
