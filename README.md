@@ -1,5 +1,7 @@
 Tip calculator app built with React, JS, SASS
 
+https://emilia-burza-tip-calculator-app.netlify.app/
+
 
 ![tip-calculator-app-1](https://github.com/user-attachments/assets/b444cbca-86be-44b6-955c-cef459511933)
 
