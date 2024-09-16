@@ -53,7 +53,7 @@ export default function App() {
     function handleReset() {
         setInputBill('')
         setInputPeople('')
-        setPercentageSelected('')
+        setPercentageSelected(15)
         setPercentageCustom('')
         setTipPerPerson(0)
         setTotalPerPerson(0)

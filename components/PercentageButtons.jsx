@@ -17,7 +17,7 @@ export default function PercentageButtons( {percentageSelected, onPercentageSele
     
     const percentageAmount = percentageData.map(percent => (
         <li key={percent.id}>
-          <label htmlFor={percent.amount} className={percentageSelected === percent.amount ? "selected" : ''}>
+          <label htmlFor={percent.amount} className={percentageSelected === percent.amount ? 'selected' : ''}>
             <input 
                 type='radio' 
                 id={percent.amount} 
