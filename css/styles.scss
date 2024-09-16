@@ -62,7 +62,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
   
 #bill {
@@ -146,7 +146,7 @@ input[type=number]::-webkit-inner-spin-button {
 #tip-percent {
   list-style: none;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(2, minmax(0, 0.5fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -250,4 +250,25 @@ input[type=number]::-webkit-inner-spin-button {
  #reset-button:active {
   color: hsl(183, 100%, 15%);
   background: hsl(172, 67%, 45%);
+}
+
+
+@media (min-width: 59.375rem) {
+#calculator-app {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 3rem;
+  height: auto;
+}
+
+#tip-percent {
+  grid-template-columns: repeat(3, minmax(0, 0.5fr));
+}
+
+#output-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 }
