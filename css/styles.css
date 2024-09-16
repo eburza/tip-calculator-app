@@ -5,16 +5,15 @@
 }
 
 html, body {
-  font-family: "Space Mono", monospace;
   font-weight: 700;
   background: hsl(185, 41%, 84%);
   font-size: 1rem;
   height: 100%;
   overflow-y: auto;
+  font-family: "Space Mono", monospace;
 }
 
 #page-wrapper {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -23,11 +22,12 @@ html, body {
   height: auto;
   min-height: 100vh;
   overflow-y: auto;
+  display: flex;
 }
 
 #logo {
-  transform: scale(1.25);
   margin-top: 4rem;
+  transform: scale(1.25);
 }
 
 #calculator-app {
@@ -82,10 +82,6 @@ input[type=number]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
 .form-label,
 .form-input {
   display: block;
@@ -116,10 +112,7 @@ input[type=number] {
   padding-right: 1rem;
 }
 
-.form-input,
-#percent-custom,
-.form-input::placeholder,
-#percent-custom::placeholder {
+.form-input, #percent-custom, .form-input::placeholder, #percent-custom::placeholder {
   font-family: "Space Mono", monospace;
   font-size: 1.5rem;
   text-align: right;
@@ -150,36 +143,49 @@ input[type=number] {
 }
 
 #tip-percent li {
-  display: flex;
-  flex-direction: initial;
-  align-items: center;
-  justify-content: center;
-  gap: initial;
-  font-family: "Space Mono", monospace;
-  font-size: 1.5rem;
-  letter-spacing: 0.12rem;
-  color: hsl(0, 0%, 100%);
-  background: hsl(183, 100%, 15%);
-  padding: 1rem;
-  border-radius: 0.5rem;
+  position: relative;
 }
 
-#tip-percent li:hover {
+#tip-percent li input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+#tip-percent label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 100%);
+  background: hsl(183, 100%, 15%);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#tip-percent li:hover label,
+#tip-percent li:active label,
+#tip-percent li input[type=radio]:checked {
   color: hsl(183, 100%, 15%);
   background: hsl(173, 61%, 77%);
 }
 
-#tip-percent li:active {
+#tip-percent label.selected {
   color: hsl(183, 100%, 15%);
+  background: hsl(172, 67%, 45%);
 }
 
-#percent-custom {
-  max-width: 11rem;
-}
-
-input[type=radio] {
-  visibility: hidden;
-  width: 0;
+#tip-percent input[type=radio]:checked + label,
+#tip-percent label.selected {
+  color: hsl(183, 100%, 15%) !important;
+  background: hsl(172, 67%, 45%) !important;
 }
 
 /* output section */
@@ -231,6 +237,7 @@ input[type=radio] {
   color: hsl(183, 100%, 15%);
   border: none;
   border-radius: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 #reset-button:hover {

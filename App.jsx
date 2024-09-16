@@ -8,7 +8,7 @@ export default function App() {
 
     const [ inputBill, setInputBill ] = useState('')
     const [ inputPeople, setInputPeople ] = useState('')
-    const [ percentageSelected, setPercentageSelected ] = useState('')
+    const [ percentageSelected, setPercentageSelected ] = useState(15)
     const [ percentageCustom, setPercentageCustom ] = useState('')
     const [ tipPerPerson, setTipPerPerson ] = useState(0)
     const [ totalPerPerson, setTotalPerPerson ] = useState(0)
@@ -41,11 +41,13 @@ export default function App() {
     function handleInputChangeTipSelected(percentage) {
         setPercentageSelected(percentage)
         setPercentageCustom('')
+        console.log('App: Percentage selected changed to', percentage)
     }
 
-    function handleInputChangeTipCustom(newInput) {
-        setPercentageCustom(newInput)
+    function handleInputChangeTipCustom(percentageCustom) {
+        setPercentageCustom(percentageCustom)
         setPercentageSelected('')
+        console.log('App: Percentage custom changed to', percentageCustom)
     }
 
     function handleReset() {

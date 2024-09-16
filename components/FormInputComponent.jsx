@@ -16,7 +16,6 @@ export default function FormInputComponent({name, label, inputData, onInputChang
         htmlFor={name} 
         className='form-label'>
             {label}
-        </label>
         <input 
         id={name} 
         className='form-input' 
@@ -26,6 +25,7 @@ export default function FormInputComponent({name, label, inputData, onInputChang
         placeholder='0'
         onInput={handleChange}
         required/>
+        </label>
     </div>
 )
 }
