@@ -4,8 +4,6 @@
 node_modules
 
 package-lock.json
-vite.config.js
-netlify.toml
 
 # dependencies
 /node_modules
