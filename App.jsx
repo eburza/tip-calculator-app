@@ -42,13 +42,11 @@ export default function App() {
     function handleInputChangeTipSelected(percentage) {
         setPercentageSelected(percentage)
         setPercentageCustom('')
-        console.log('App: Percentage selected changed to', percentage)
     }
 
     function handleInputChangeTipCustom(percentageCustom) {
         setPercentageCustom(percentageCustom)
         setPercentageSelected('')
-        console.log('App: Percentage custom changed to', percentageCustom)
     }
 
     function handleReset() {
@@ -72,30 +70,37 @@ export default function App() {
                         name='bill'
                         label='Bill'
                         inputData={inputBill}
-                        onInputChange={handleInputChangeBill}/>
+                        onInputChange={handleInputChangeBill}
+                        testId='form-input-bill'/>
                     <PercentageButtons 
                         percentageSelected={percentageSelected}
                         onPercentageSelectedChange={handleInputChangeTipSelected}
                         percentageCustom={percentageCustom}
-                        onPercentageCustomChange={handleInputChangeTipCustom}/>
+                        onPercentageCustomChange={handleInputChangeTipCustom}
+                        testId='percentage'
+                        testIdCustom='percentage-custom'/>
                     <FormInputComponent 
                         name='people'
                         label='Number of People'
                         inputData={inputPeople}
-                        onInputChange={handleInputChangePeople}/>
+                        onInputChange={handleInputChangePeople}
+                        testId='form-input-people'/>
                 </form>
 
                 <div id='output-section' className='container'>
                     <div id='computation-container' className='container'>
                         <OutputCalculation 
                             label='Tip Amount'
-                            result={tipPerPerson}/>
+                            result={tipPerPerson}
+                            testId='output-tip'/>
                         <OutputCalculation 
                             label='Total'
-                            result={totalPerPerson}/>
+                            result={totalPerPerson}
+                            testId='output-total'/>
                     </div>
                     <ResetButton 
-                        onReset={handleReset}/>
+                        onReset={handleReset}
+                        testId='reset-button'/>
                 </div>
 
             </section>
