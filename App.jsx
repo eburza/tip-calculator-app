@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import logo from './images/logo.svg'
 import PercentageButtons from './components/PercentageButtons'
 import FormInputComponent from './components/FormInputComponent'
 import ResetButton from './components/ResetButton'
@@ -62,7 +63,7 @@ export default function App() {
     return (
         <div id='page-wrapper'>
             <header>
-                <img id='logo' src='./images/logo.svg' alt='splitter logo' />
+                <img id='logo' src={logo} alt='splitter logo' />
             </header>
 
             <section id='calculator-app'>
