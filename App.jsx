@@ -61,7 +61,7 @@ export default function App() {
     }
 
     return (
-        <div id='page-wrapper'>
+        <div id='page-wrapper' data-testid='splitter-app'>
             <header>
                 <img id='logo' src={logo} alt='splitter logo' />
             </header>
